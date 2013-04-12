@@ -1,0 +1,54 @@
+<macromedia-extension
+  name="Char Replace Command"
+	version="0.3"
+	type="suite">
+
+	<author name="Keith Wyland" />
+	
+	<products>
+		<product name="Dreamweaver" version="8" primary="true" />
+	</products>
+	
+	<description>
+		<![CDATA[
+		<p>Char Replace Commands is a simple Find-Replace command. The command will run a series of Find-Replace actions, instead of needing to do each of them manually. The characters that are replaced are common characters that get copied over from Microsoft Word.</p> 
+		
+		<p><b>Characters</b> - Replaces the following characters (that may have been pasted from a Word doc) with its equivalent HTML.</p>
+			<ul>
+				<li>Fractions</li>
+				<li>Strange space characters from Word documents</li>
+				<li>Trademark, registered, and copy symbols</li>
+				<li>Ellipses</li>
+			</ul>
+		]]>
+	</description>
+	
+	<ui-access>
+		<![CDATA[
+			You can find the new Char Replace Command in the Commands menu in Dreamweaver.
+		]]>
+	</ui-access>
+	
+	<files>
+		<file source="charReplace/ReplaceChars.html" destination="$Dreamweaver/configuration/Commands/charReplace" />
+		<file source="charReplace/replaceChars/Replace_Chars.js" destination="$Dreamweaver/configuration/Commands/charReplace/replaceChars" />
+	</files>	
+	
+	<configuration-changes>
+		
+		<menu-insert prependTo="DWMenu_Commands">
+			<menu id="DWMenu_CharReplace" name="_Char Replace">
+		</menu>
+		</menu-insert>
+		<menu-insert insertAfter="DWMenu_CharReplace">
+			<separator id="DWMenu_CharReplace_separator" />
+		</menu-insert>
+		
+		<menu-insert appendTo="DWMenu_CharReplace">
+			<menuitem id="DWMenu_CharReplace_ReplaceChars" name="Characters (fractions, trademark, ellipses, etc.)" file="Commands/charReplace/ReplaceChars.html" />
+		</menu-insert>
+		
+	</configuration-changes>
+
+	
+</macromedia-extension>
